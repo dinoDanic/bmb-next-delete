@@ -41,10 +41,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
             fontSans.variable
           )}
         >
-          <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-            <AuthProvider>{children}</AuthProvider>
-            <TailwindIndicator />
-          </ThemeProvider>
+          <AuthProvider>
+            <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+              {children}
+              <TailwindIndicator />
+            </ThemeProvider>
+          </AuthProvider>
         </body>
       </html>
     </>

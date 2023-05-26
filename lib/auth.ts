@@ -1,5 +1,4 @@
 import {
-  Account,
   CreateSessionDocument,
   CreateSessionInput,
   MeDocument,
@@ -7,6 +6,7 @@ import {
 import NextAuth, { NextAuthOptions } from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
 
+import { AccountWithToken } from "@/types/auth"
 import { routes } from "@/config/site"
 import { graphQLClient } from "@/lib/graphql-request"
 
@@ -30,15 +30,16 @@ export const authOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({
       name: "Credentials",
-      credentials: {
-        email: { label: "email", type: "text" },
-        password: { label: "password", type: "password" },
-      },
-      async authorize(credentials): Promise<Account | null> {
-        if (!credentials?.email || !credentials.password) return null
+      credentials: {},
+      async authorize(input): Promise<AccountWithToken | null> {
+        const credentials = input as CreateSessionInput
+        const { email, password } = (credentials as CreateSessionInput) || {}
+
+        if (!email || !password) return null
+
         const sessionToken = await createSessionMutation({
-          email: credentials?.email,
-          password: credentials?.password,
+          email,
+          password,
         })
 
         if (sessionToken?.token) {
@@ -46,8 +47,17 @@ export const authOptions: NextAuthOptions = {
             "authorization",
             `Bearer ${sessionToken?.token}`
           )
+
           const me = await getMe()
-          return me || null
+
+          console.log("me?", me)
+
+          if (me) {
+            return {
+              ...me,
+              token: sessionToken.token,
+            }
+          }
         }
         return null
       },
@@ -56,6 +66,16 @@ export const authOptions: NextAuthOptions = {
   session: {
     strategy: "jwt",
   },
+  callbacks: {
+    async jwt({ token, user }) {
+      return { ...token, ...user }
+    },
+    async session({ session, token }) {
+      session.user = token as any
+      return session
+    },
+  },
+
   pages: {
     signIn: routes.login,
   },

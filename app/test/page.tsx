@@ -1,13 +1,14 @@
+"use client"
+
 import React from "react"
 import { MeDocument } from "@/gql/graphql"
 
 import { graphQLClient } from "@/lib/graphql-request"
 
-const Page = async () => {
-  // const session = useSession()
-  // console.log(session)
-  const data = await graphQLClient.request(MeDocument)
-  console.log(data)
+const Page = () => {
+  graphQLClient.request(MeDocument).then((data) => {
+    console.log(data.me)
+  })
 
   return <div>page</div>
 }
