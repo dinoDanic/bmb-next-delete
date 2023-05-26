@@ -5,7 +5,7 @@ import { Heading, Text } from "@/components/typography"
 
 const LoginPage = () => {
   return (
-    <Center>
+    <Center className="pt-xxxl">
       <Stack gap="lg">
         <Heading level="1" className="text-center">
           WELCOME BACK
