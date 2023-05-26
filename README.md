@@ -12,3 +12,9 @@ We are usigh Husky, after validation check lighthouse, should be:
 performance = 100
 accasibility = > 95
 best practices = 100
+
+## Stack
+
+shadcn/ui: https://ui.shadcn.com/
+tailwind: https://tailwindcss.com/
+kodiui: primitive components
