@@ -15,3 +15,10 @@ export const siteConfig = {
     docs: "https://ui.shadcn.com",
   },
 }
+
+export const routes = {
+  signIn: "/auth/login",
+  home: "/home",
+  test1: "/home/test1",
+  root: "/",
+} as const
