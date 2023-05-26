@@ -1,6 +1,7 @@
 import "@/styles/globals.css"
 import { ReactNode } from "react"
 import { Metadata } from "next"
+import { AuthProvider } from "@/features/auth/components/auth-provider"
 
 import { siteConfig } from "@/config/site"
 import { fontSans } from "@/lib/fonts"
@@ -41,7 +42,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           )}
         >
           <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-            {children}
+            <AuthProvider>{children}</AuthProvider>
             <TailwindIndicator />
           </ThemeProvider>
         </body>

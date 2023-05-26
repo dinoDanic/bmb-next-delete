@@ -17,7 +17,7 @@ export const siteConfig = {
 }
 
 export const routes = {
-  login: "/auth/login",
+  login: "/login",
   home: "/home",
   root: "/",
 } as const
