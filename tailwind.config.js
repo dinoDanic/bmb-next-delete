@@ -1,9 +1,14 @@
-const { fontFamily } = require("tailwindcss/defaultTheme");
+const { fontFamily } = require("tailwindcss/defaultTheme")
+const { spacing } = require("./components/primitives/vars")
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
-  content: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}"],
+  content: [
+    "app/**/*.{ts,tsx}",
+    "components/**/*.{ts,tsx}",
+    "components/primitives/*.{ts,tsx}",
+  ],
   theme: {
     container: {
       center: true,
@@ -13,6 +18,9 @@ module.exports = {
       },
     },
     extend: {
+      spacing: spacing,
+
+      // shadcn 👇
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -73,4 +81,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-};
+}
