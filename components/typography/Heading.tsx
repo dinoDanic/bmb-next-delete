@@ -1,75 +1,40 @@
-import React, { FC, PropsWithChildren } from "react"
-import clsx from "clsx"
+import React from "react"
+import { cva, type VariantProps } from "class-variance-authority"
 
-interface Props extends PropsWithChildren {
-  level: "1" | "2" | "3" | "4"
-  className?: string
-}
+import { cn } from "@/lib/utils"
 
-interface LevelProps extends PropsWithChildren {
-  className?: Props["className"]
-}
+type HeadingProps = React.HTMLAttributes<HTMLHeadElement> &
+  VariantProps<typeof headingVariants>
 
-export const Heading: FC<Props> = ({ level, children, ...props }) => {
-  const HeadingComponent = levels[level]
-  return <HeadingComponent {...props}>{children}</HeadingComponent>
-}
+const headingVariants = cva("", {
+  variants: {
+    level: {
+      "1": "scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl",
+      "2": "scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0",
+      "3": "scroll-m-20 text-2xl font-semibold tracking-tight",
+      "4": "scroll-m-20 text-xl font-semibold tracking-tight",
+    },
+  },
+  defaultVariants: {
+    level: "1",
+  },
+})
 
-const Level1: FC<LevelProps> = ({ children, className }) => {
-  return (
-    <h1
-      className={clsx(
-        "scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl",
-        className
-      )}
-    >
-      {children}
-    </h1>
-  )
-}
+const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
+  ({ level, children, className, ...props }, ref) => {
+    const Comp = `h${level}` as "h1" | "h2" | "h3" | "h4"
+    return (
+      <Comp
+        className={cn(headingVariants({ level, className }))}
+        ref={ref}
+        {...props}
+      >
+        {children}
+      </Comp>
+    )
+  }
+)
 
-const Level2: FC<LevelProps> = ({ children, className }) => {
-  return (
-    <h2
-      className={clsx(
-        "scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0",
-        className
-      )}
-    >
-      {children}
-    </h2>
-  )
-}
+Heading.displayName = "Heading"
 
-const Level3: FC<LevelProps> = ({ children, className }) => {
-  return (
-    <h3
-      className={clsx(
-        "scroll-m-20 text-2xl font-semibold tracking-tight",
-        className
-      )}
-    >
-      {children}
-    </h3>
-  )
-}
-
-const Level4: FC<LevelProps> = ({ children, className }) => {
-  return (
-    <h4
-      className={clsx(
-        "scroll-m-20 text-xl font-semibold tracking-tight",
-        className
-      )}
-    >
-      {children}
-    </h4>
-  )
-}
-
-const levels = {
-  "1": Level1,
-  "2": Level2,
-  "3": Level3,
-  "4": Level4,
-} as const
+export { Heading }

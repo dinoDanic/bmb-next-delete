@@ -18,6 +18,7 @@ module.exports = {
       },
     },
     extend: {
+      // custom 👇
       spacing: spacing,
 
       // shadcn 👇
