@@ -50,8 +50,6 @@ export const authOptions: NextAuthOptions = {
 
           const me = await getMe()
 
-          console.log("me?", me)
-
           if (me) {
             return {
               ...me,
