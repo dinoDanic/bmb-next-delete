@@ -2,7 +2,7 @@ import React, { FC, PropsWithChildren } from "react"
 import clsx from "clsx"
 
 interface CenterProps extends PropsWithChildren {
-  direction: "horizontal" | "vertical" | "center"
+  direction?: "horizontal" | "vertical" | "center"
   className?: string
 }
 

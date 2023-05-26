@@ -1,7 +1,8 @@
 import React from "react"
+import { Center } from "@/components"
 
 const LoginPage = () => {
-  return <div>loginpage</div>
+  return <Center>loginpage</Center>
 }
 
 export default LoginPage
