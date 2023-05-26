@@ -31,13 +31,13 @@ export const authOptions: NextAuthOptions = {
     CredentialsProvider({
       name: "Credentials",
       credentials: {
-        username: { label: "username", type: "text" },
+        email: { label: "email", type: "text" },
         password: { label: "password", type: "password" },
       },
       async authorize(credentials): Promise<Account | null> {
-        if (!credentials?.username || !credentials.password) return null
+        if (!credentials?.email || !credentials.password) return null
         const sessionToken = await createSessionMutation({
-          username: credentials?.username,
+          email: credentials?.email,
           password: credentials?.password,
         })
 

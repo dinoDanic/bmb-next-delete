@@ -1,5 +1,6 @@
 import React from "react"
 import { Center, Stack } from "@/components"
+import { LoginForm } from "@/features/auth/components/LoginForm"
 
 import { Heading, Text } from "@/components/typography"
 
@@ -14,6 +15,7 @@ const LoginPage = () => {
           We are happy to invite you to the upgraded platform! Log in to your
           account and start enjoying music.
         </Text>
+        <LoginForm />
       </Stack>
     </Center>
   )
