@@ -23,3 +23,7 @@ has to be error / warning free
 shadcn/ui: https://ui.shadcn.com/
 tailwind: https://tailwindcss.com/
 kodiui: primitive components
+
+## Icons
+
+See icons.tsx
