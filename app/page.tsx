@@ -1,3 +1,11 @@
+import React from "react"
+
+import { Button } from "@/components/ui/button"
+
 export default function Home() {
-  return <section>hello</section>;
+  return (
+    <section>
+      <Button>Button</Button>
+    </section>
+  )
 }

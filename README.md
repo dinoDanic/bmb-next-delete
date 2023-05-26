@@ -8,10 +8,15 @@ pnpm dev
 
 ## Commit
 
-We are usigh Husky, after validation check lighthouse, should be:
+#### We are usigh Husky, after validation check lighthouse, should be:
+
 performance = 100
 accasibility = > 95
 best practices = 100
+
+#### Console
+
+has to be error / warning free
 
 ## Stack
 
