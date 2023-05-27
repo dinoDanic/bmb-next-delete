@@ -1,8 +1,6 @@
 /* eslint-disable */
-
-import { TypedDocumentNode as DocumentNode } from "@graphql-typed-document-node/core"
-
-import * as types from "./graphql"
+import * as types from './graphql';
+import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core';
 
 /**
  * Map of all GraphQL operations in the project.
@@ -15,9 +13,8 @@ import * as types from "./graphql"
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
-  "query me {\n  me {\n    id\n    firstName\n    lastName\n    email\n  }\n}\n\nmutation createSession($input: CreateSessionInput!) {\n  createSession(input: $input) {\n    token\n  }\n}":
-    types.MeDocument,
-}
+    "query me {\n  me {\n    id\n    firstName\n    lastName\n    email\n  }\n}\n\nmutation createSession($input: CreateSessionInput!) {\n  createSession(input: $input) {\n    token\n  }\n}": types.MeDocument,
+};
 
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
@@ -31,18 +28,15 @@ const documents = {
  * The query argument is unknown!
  * Please regenerate the types.
  */
-export function graphql(source: string): unknown
+export function graphql(source: string): unknown;
 
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(
-  source: "query me {\n  me {\n    id\n    firstName\n    lastName\n    email\n  }\n}\n\nmutation createSession($input: CreateSessionInput!) {\n  createSession(input: $input) {\n    token\n  }\n}"
-): (typeof documents)["query me {\n  me {\n    id\n    firstName\n    lastName\n    email\n  }\n}\n\nmutation createSession($input: CreateSessionInput!) {\n  createSession(input: $input) {\n    token\n  }\n}"]
+export function graphql(source: "query me {\n  me {\n    id\n    firstName\n    lastName\n    email\n  }\n}\n\nmutation createSession($input: CreateSessionInput!) {\n  createSession(input: $input) {\n    token\n  }\n}"): (typeof documents)["query me {\n  me {\n    id\n    firstName\n    lastName\n    email\n  }\n}\n\nmutation createSession($input: CreateSessionInput!) {\n  createSession(input: $input) {\n    token\n  }\n}"];
 
 export function graphql(source: string) {
-  return (documents as any)[source] ?? {}
+  return (documents as any)[source] ?? {};
 }
 
-export type DocumentType<TDocumentNode extends DocumentNode<any, any>> =
-  TDocumentNode extends DocumentNode<infer TType, any> ? TType : never
+export type DocumentType<TDocumentNode extends DocumentNode<any, any>> = TDocumentNode extends DocumentNode<  infer TType,  any>  ? TType  : never;
