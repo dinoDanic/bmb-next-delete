@@ -1,5 +1,5 @@
 const { fontFamily } = require("tailwindcss/defaultTheme")
-const { spacing } = require("./components/primitives/vars")
+const { spacing, customColors } = require("./styles/vars")
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -7,7 +7,7 @@ module.exports = {
   content: [
     "app/**/*.{ts,tsx}",
     "components/**/*.{ts,tsx}",
-    "components/primitives/*.{ts,tsx}",
+    "styles/**/*.{ts,tsx}",
   ],
   theme: {
     container: {
@@ -22,6 +22,7 @@ module.exports = {
       spacing: spacing,
 
       colors: {
+        ...customColors,
         // shadcn 👇
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

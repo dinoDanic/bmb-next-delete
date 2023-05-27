@@ -1,7 +1,7 @@
 import React, { FC, ReactNode } from "react"
 import clsx from "clsx"
 
-import { SpacingKeys, gapSpacing } from "./vars"
+import { SpacingKeys, gapSpacing } from "@/styles/vars"
 
 interface SwitcherProps {
   children: ReactNode

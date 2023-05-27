@@ -1,5 +1,3 @@
-"use client"
-
 import React from "react"
 import { type VariantProps } from "class-variance-authority"
 
@@ -7,14 +5,42 @@ import { cn } from "@/lib/utils"
 
 import { boxVariants } from "./variants"
 
-type BoxProps = React.HTMLAttributes<HTMLHeadElement> &
-  VariantProps<typeof boxVariants>
+export type BoxProps = React.HTMLAttributes<HTMLDivElement> &
+  VariantProps<typeof boxVariants> & {
+    as?: "div" | "h1" | "h2" | "h3" | "h4"
+  }
 
-const Box = React.forwardRef<HTMLHeadingElement, BoxProps>(
-  ({ className, ...props }, ref) => {
+const Box = React.forwardRef<HTMLDivElement, BoxProps>(
+  (
+    {
+      className,
+      gap,
+      as,
+      flexDirection,
+      color,
+      background,
+      padding,
+      position,
+      display,
+      ...props
+    },
+    ref
+  ) => {
+    const Ele = as ? as : "div"
     return (
-      <div
-        className={cn(boxVariants({ ...props, className }))}
+      <Ele
+        className={cn(
+          boxVariants({
+            gap,
+            flexDirection,
+            color,
+            background,
+            padding,
+            position,
+            className,
+            display,
+          })
+        )}
         ref={ref}
         {...props}
       />

@@ -1,15 +1,22 @@
-import React, { FC, ReactNode } from "react"
-import clsx from "clsx"
+import React, { FC } from "react"
 
-import { SpacingKeys, gapSpacing } from "./vars"
+import { Box, BoxProps } from "./box/box"
 
-interface StackProps {
-  children: ReactNode
-  gap?: SpacingKeys
-  className?: string
-}
-
-export const Stack: FC<StackProps> = ({ children, gap = "sm", className }) => {
-  const stackClass = `flex flex-col justify-start ${gapSpacing[gap]}`
-  return <div className={clsx(stackClass, className)}>{children}</div>
+export const Stack: FC<BoxProps> = ({
+  children,
+  display,
+  flexDirection,
+  gap,
+  ...props
+}) => {
+  return (
+    <Box
+      display={display || "flex"}
+      flexDirection={flexDirection || "flexCol"}
+      gap={gap || "sm"}
+      {...props}
+    >
+      {children}
+    </Box>
+  )
 }

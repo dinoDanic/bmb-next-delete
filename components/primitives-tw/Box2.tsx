@@ -1,7 +1,7 @@
 import React, { FC, PropsWithChildren } from "react"
 import clsx from "clsx"
 
-import { SpacingKeys, paddingSpacing } from "./vars"
+import { SpacingKeys, paddingSpacing } from "@/styles/vars"
 
 interface BoxProps extends PropsWithChildren {
   p?: SpacingKeys

@@ -1,13 +1,24 @@
 import { cva } from "class-variance-authority"
 
-import { colors, gapSpacing, paddingSpacing, position } from "../vars"
+import {
+  backgroundColors,
+  display,
+  flexDirection,
+  gapSpacing,
+  paddingSpacing,
+  position,
+  textColors,
+} from "@/styles/vars"
 
 export const boxVariants = cva("", {
   variants: {
     gap: gapSpacing,
     padding: paddingSpacing,
     position: position,
-    background: colors,
+    background: backgroundColors,
+    color: textColors,
+    display: display,
+    flexDirection: flexDirection,
   },
   defaultVariants: {
     gap: "sm",

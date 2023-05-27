@@ -1,12 +1,12 @@
-import React from "react"
-import { FlexBox } from "@kodiui/ui"
+// import React from "react"
 
-import { Products } from "./components"
+// import { Products } from "./components"
 
 export const Sidebar = () => {
-  return (
-    <FlexBox justifyContent="space-between">
-      <Products />
-    </FlexBox>
-  )
+  return null
+  // return (
+  //   // <FlexBox justifyContent="space-between">
+  //     // <Products />
+  //   // </FlexBox>
+  // )
 }
