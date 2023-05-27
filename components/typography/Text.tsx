@@ -1,10 +1,12 @@
-import React from "react"
+import React, { ReactNode } from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 
-type TextProps = React.HTMLAttributes<HTMLHeadElement> &
-  VariantProps<typeof textVariants>
+type TextProps = VariantProps<typeof textVariants> & {
+  className?: string
+  children: ReactNode
+}
 
 const textVariants = cva("", {
   variants: {

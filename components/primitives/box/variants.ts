@@ -1,13 +1,18 @@
 import { cva } from "class-variance-authority"
 
 import {
+  alignItems,
   backgroundColors,
   display,
   flexDirection,
+  flexWrap,
   gapSpacing,
+  height,
+  justifyContent,
   paddingSpacing,
   position,
   textColors,
+  width,
 } from "@/styles/vars"
 
 export const boxVariants = cva("", {
@@ -19,9 +24,14 @@ export const boxVariants = cva("", {
     color: textColors,
     display: display,
     flexDirection: flexDirection,
+    flexWrap: flexWrap,
+    justifyContent: justifyContent,
+    alignItems: alignItems,
+    width: width,
+    height: height,
   },
   defaultVariants: {
-    gap: "sm",
+    //
   },
 })
 

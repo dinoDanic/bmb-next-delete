@@ -21,3 +21,28 @@ export const flexDirection = {
   flexCol: "flex-col",
   fleColReverse: "flex-col-reverse",
 }
+
+export const flexWrap = {
+  flexWrap: "flex-wrap",
+  flexWrapReverse: "flex-wrap-reverse",
+  flexNowrap: "flex-nowrap",
+}
+
+export const justifyContent = {
+  justifyNormal: "justify-normal",
+  justifyStart: "justify-start",
+  justifyEnd: "justify-end",
+  justifyCenter: "justify-center",
+  justifyBetween: "justify-between",
+  justifyAround: "justify-around",
+  justifyEvenly: "justify-evenly",
+  justifyStretch: "justify-stretch",
+}
+
+export const alignItems = {
+  itemsStart: "items-start",
+  itemsEnd: "items-end",
+  itemsCenter: "items-center",
+  itemsBaseline: "items-baseline",
+  itemsStretch: "items-stretch",
+}

@@ -1,12 +1,12 @@
 import React from "react"
-import { Center, Stack } from "@/components"
+import { Stack } from "@/components"
 import { LoginForm } from "@/features/auth/components/LoginForm"
 
 import { Heading, Text } from "@/components/typography"
 
 const LoginPage = () => {
   return (
-    <Center className="pt-xxxl">
+    <div className="place-content-center">
       <Stack gap="lg">
         <Heading level="1" className="text-center">
           WELCOME BACK
@@ -17,7 +17,7 @@ const LoginPage = () => {
         </Text>
         <LoginForm />
       </Stack>
-    </Center>
+    </div>
   )
 }
 

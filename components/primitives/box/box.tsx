@@ -7,7 +7,7 @@ import { boxVariants } from "./variants"
 
 export type BoxProps = React.HTMLAttributes<HTMLDivElement> &
   VariantProps<typeof boxVariants> & {
-    as?: "div" | "h1" | "h2" | "h3" | "h4"
+    as?: "div" | "h1" | "h2" | "h3" | "h4" | "p"
   }
 
 const Box = React.forwardRef<HTMLDivElement, BoxProps>(
@@ -22,6 +22,11 @@ const Box = React.forwardRef<HTMLDivElement, BoxProps>(
       padding,
       position,
       display,
+      flexWrap,
+      alignItems,
+      justifyContent,
+      width,
+      height,
       ...props
     },
     ref
@@ -37,8 +42,13 @@ const Box = React.forwardRef<HTMLDivElement, BoxProps>(
             background,
             padding,
             position,
-            className,
             display,
+            flexWrap,
+            className,
+            alignItems,
+            justifyContent,
+            width,
+            height,
           })
         )}
         ref={ref}
