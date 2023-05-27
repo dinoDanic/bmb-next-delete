@@ -8,7 +8,7 @@ interface BoxProps extends PropsWithChildren {
   className?: string
 }
 
-export const Box: FC<BoxProps> = ({ children, p = "sm", className }) => {
+export const Box2: FC<BoxProps> = ({ children, p = "sm", className }) => {
   const boxClass = `${paddingSpacing[p]}`
   return <div className={(clsx(boxClass), className)}>{children}</div>
 }
