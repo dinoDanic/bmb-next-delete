@@ -8,7 +8,7 @@ const page = () => {
     <Stack>
       <Heading level="2">Text</Heading>
       <Text variant="default">Default</Text>
-      <Text variant="lg">Large</Text>
+      <Text variant="lg">Lartestge</Text>
       <Text variant="sm">Small</Text>
       <Text variant="lead">Lead</Text>
       <Text variant="muted">Muted</Text>
