@@ -4,7 +4,7 @@ import { Box } from "@/components/primitives/box"
 import { FlexBox } from "@/components/primitives/flex-box"
 
 import { ProductTrigger } from "./product-trigger"
-import { SidebarDrawer } from "./sidebar-drawer/sidebar-drawer"
+import { SidebarDrawer } from "./sidebar-drawer"
 
 export const Sidebar = () => {
   return (

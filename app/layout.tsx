@@ -1,7 +1,7 @@
 import "@/styles/globals.css"
 import { ReactNode } from "react"
 import { Metadata } from "next"
-import { Sidebar } from "@/features/sidebar/components/sidebar"
+import { Sidebar } from "@/features/sidebar/sidebar"
 
 import { siteConfig } from "@/config/site"
 import { fontSans } from "@/lib/fonts"
