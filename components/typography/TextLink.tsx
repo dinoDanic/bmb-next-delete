@@ -1,21 +1,17 @@
 import React from "react"
 import Link from "next/link"
 
-import { Text, type TextProps } from "./text"
-
 type TextLinkProps = {
   href: string
 }
 
-type Props = TextLinkProps & TextProps
+type Props = TextLinkProps
 
 const TextLink = React.forwardRef<HTMLHeadingElement, Props>(
-  ({ children, href, ...props }, ref) => {
+  ({ href }, ref) => {
     return (
       <Link href={href}>
-        <Text ref={ref} {...props}>
-          {children}
-        </Text>
+        <div ref={ref}>lol</div>
       </Link>
     )
   }
