@@ -1,12 +1,12 @@
 "use client"
 
 import React, { FC } from "react"
+import Link from "next/link"
 import { useSidebarStore } from "@/features/sidebar/stores/use-sidebar-store"
 import { cva } from "class-variance-authority"
 
 import { Box } from "@/components/primitives/box/box"
 import { Stack } from "@/components/primitives/stack"
-import { TextLink } from "@/components/typography/TextLink"
 
 export const ExtendContent: FC = () => {
   const { activeCategory } = useSidebarStore()
@@ -35,9 +35,9 @@ export const ExtendContent: FC = () => {
       <Box pt="2xl" />
       <Stack gap="sm">
         {activeCategory?.childrens?.map((c) => (
-          <TextLink className="hover:text-brand" href="#">
+          <Link className="hover:text-brand" href="#">
             {c?.name}
-          </TextLink>
+          </Link>
         ))}
       </Stack>
     </Box>
