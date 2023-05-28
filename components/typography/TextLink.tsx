@@ -1,7 +1,7 @@
 import React from "react"
 import Link from "next/link"
 
-import { Text, TextProps } from "./text"
+import { Text, type TextProps } from "./text"
 
 type TextLinkProps = {
   href: string
