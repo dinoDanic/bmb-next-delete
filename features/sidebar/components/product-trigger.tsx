@@ -5,7 +5,6 @@ import { ListIcon } from "lucide-react"
 
 import { Box } from "@/components/primitives/box/box"
 import { Cluster } from "@/components/primitives/cluster"
-import { Text } from "@/components/typography/text"
 
 import { useSidebarStore } from "../stores/use-sidebar-store"
 
@@ -24,9 +23,7 @@ export const ProductTrigger = () => {
     >
       <Cluster gap="xs" alignItems="center" className={color}>
         <ListIcon width="13px" />
-        <Text size="sm" weight="medium">
-          Proizvodi
-        </Text>
+        Proizvodi
       </Cluster>
     </Box>
   )
