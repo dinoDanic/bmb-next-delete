@@ -11,8 +11,8 @@ interface Props {
   children: ReactNode
 }
 
-export const AuthProvider: FC<Props> = () => {
-  return null
+export const AuthProvider: FC<Props> = ({ children }) => {
+  return <>{children}</>
   // return (
   //   <SessionProvider>
   //     <GraphqlClient />
