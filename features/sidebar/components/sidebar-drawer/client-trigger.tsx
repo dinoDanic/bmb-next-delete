@@ -5,7 +5,7 @@ import { cva } from "class-variance-authority"
 
 import { Box } from "@/components/primitives/box/box"
 
-import { useSidebarStore } from "../../stores/useSidebarStore"
+import { useSidebarStore } from "../../stores/use-sidebar-store"
 
 export const ClientTrigger: FC<PropsWithChildren> = ({ children }) => {
   const { isSidebarActive } = useSidebarStore()

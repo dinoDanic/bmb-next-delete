@@ -2,7 +2,7 @@
 
 import React, { FC } from "react"
 import Link from "next/link"
-import { useSidebarStore } from "@/features/sidebar/stores/useSidebarStore"
+import { useSidebarStore } from "@/features/sidebar/stores/use-sidebar-store"
 import { Category } from "@/gql/graphql"
 import { ChevronRight } from "lucide-react"
 

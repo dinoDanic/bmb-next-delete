@@ -7,7 +7,7 @@ import { Box } from "@/components/primitives/box/box"
 import { Cluster } from "@/components/primitives/cluster"
 import { Text } from "@/components/typography/text"
 
-import { useSidebarStore } from "../stores/useSidebarStore"
+import { useSidebarStore } from "../stores/use-sidebar-store"
 
 export const ProductTrigger = () => {
   const { isSidebarActive, setSidebarActive } = useSidebarStore()

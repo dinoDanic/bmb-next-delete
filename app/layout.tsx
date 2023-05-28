@@ -1,7 +1,6 @@
 import "@/styles/globals.css"
 import { ReactNode } from "react"
 import { Metadata } from "next"
-import { AuthProvider } from "@/features/auth/components/auth-provider"
 import { Sidebar } from "@/features/sidebar/components/sidebar"
 
 import { siteConfig } from "@/config/site"
@@ -42,13 +41,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
             fontSans.variable
           )}
         >
-          <AuthProvider>
-            <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-              <Sidebar />
-              {children}
-              <TailwindIndicator />
-            </ThemeProvider>
-          </AuthProvider>
+          <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+            <Sidebar />
+            {children}
+            <TailwindIndicator />
+          </ThemeProvider>
         </body>
       </html>
     </>

@@ -1,7 +1,7 @@
 "use client"
 
 import React, { FC } from "react"
-import { useSidebarStore } from "@/features/sidebar/stores/useSidebarStore"
+import { useSidebarStore } from "@/features/sidebar/stores/use-sidebar-store"
 import { cva } from "class-variance-authority"
 
 import { Box } from "@/components/primitives/box/box"

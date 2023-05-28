@@ -3,7 +3,7 @@
 import React from "react"
 import { cva } from "class-variance-authority"
 
-import { useSidebarStore } from "../../stores/useSidebarStore"
+import { useSidebarStore } from "../../stores/use-sidebar-store"
 
 export const Layer = () => {
   const { isSidebarActive, clearStore } = useSidebarStore()
