@@ -1,7 +1,6 @@
 import "@/styles/globals.css"
 import { ReactNode } from "react"
 import { Metadata } from "next"
-import { Sidebar } from "@/features/sidebar/components/sidebar"
 
 import { siteConfig } from "@/config/site"
 import { fontSans } from "@/lib/fonts"
@@ -42,7 +41,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
           )}
         >
           <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-            <Sidebar />
             {children}
             <TailwindIndicator />
           </ThemeProvider>
