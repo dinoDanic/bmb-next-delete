@@ -1,7 +1,7 @@
 import React from "react"
 
 import { ClientTrigger } from "./client-trigger"
-import { ExtendContent } from "./extend-content/extend-content"
+import { ExtendContent } from "./extend-content"
 import { Layer } from "./layer"
 import { SidebarContent } from "./sidebar-content"
 

@@ -5,7 +5,7 @@ import Link from "next/link"
 import { useSidebarStore } from "@/features/sidebar/stores/use-sidebar-store"
 import { cva } from "class-variance-authority"
 
-import { Box } from "@/components/primitives/box/box"
+import { Box } from "@/components/primitives/box"
 import { Stack } from "@/components/primitives/stack"
 
 export const ExtendContent: FC = () => {

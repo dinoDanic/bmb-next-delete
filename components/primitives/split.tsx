@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 
-import { Box, BoxProps } from "./box/box"
+import { Box, BoxProps } from "./box"
 
 export const Split: FC<BoxProps> = ({
   children,
