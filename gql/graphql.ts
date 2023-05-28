@@ -16,68 +16,88 @@ export type Scalars = {
   Float: { input: number; output: number; }
 };
 
-export type Account = Node & {
-  __typename?: 'Account';
-  email?: Maybe<Scalars['String']['output']>;
-  firstName?: Maybe<Scalars['String']['output']>;
-  /** The ID of an object */
+export type Category = {
+  __typename?: 'Category';
+  active?: Maybe<Scalars['Boolean']['output']>;
+  childrens?: Maybe<Array<Maybe<Category>>>;
   id: Scalars['ID']['output'];
-  lastName?: Maybe<Scalars['String']['output']>;
-  username?: Maybe<Scalars['String']['output']>;
+  name: Scalars['String']['output'];
+  parentId?: Maybe<Scalars['String']['output']>;
 };
 
-export type CreateSessionInput = {
-  email?: InputMaybe<Scalars['String']['input']>;
-  password: Scalars['String']['input'];
-  username?: InputMaybe<Scalars['String']['input']>;
+export type Link = {
+  __typename?: 'Link';
+  description: Scalars['String']['output'];
+  id: Scalars['ID']['output'];
+  url: Scalars['String']['output'];
 };
 
-export type Node = {
-  /** The ID of the object. */
+export type Product = {
+  __typename?: 'Product';
+  active?: Maybe<Scalars['Boolean']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  ean?: Maybe<Scalars['String']['output']>;
   id: Scalars['ID']['output'];
+  metaDescription?: Maybe<Scalars['String']['output']>;
+  metaKeyword?: Maybe<Scalars['String']['output']>;
+  metaTitle?: Maybe<Scalars['String']['output']>;
+  name: Scalars['String']['output'];
+  price?: Maybe<Scalars['Int']['output']>;
+  weight?: Maybe<Scalars['Int']['output']>;
 };
 
 export type RootMutationType = {
   __typename?: 'RootMutationType';
-  createSession?: Maybe<Session>;
+  /** Create a new link */
+  createLink?: Maybe<Link>;
 };
 
 
-export type RootMutationTypeCreateSessionArgs = {
-  input?: InputMaybe<CreateSessionInput>;
+export type RootMutationTypeCreateLinkArgs = {
+  description: Scalars['String']['input'];
+  url: Scalars['String']['input'];
 };
 
 export type RootQueryType = {
   __typename?: 'RootQueryType';
-  /** Health check */
-  healthCheck?: Maybe<Scalars['Boolean']['output']>;
-  me?: Maybe<Account>;
-  node?: Maybe<Node>;
+  /** Get all products */
+  allProducts?: Maybe<Array<Maybe<Product>>>;
+  /** Get categories */
+  getCategories?: Maybe<Array<Maybe<Category>>>;
+  /** Get Product by ID */
+  getProductById?: Maybe<Product>;
+  /** Get Products by Category id */
+  getProductsByCategoryId?: Maybe<Array<Maybe<Product>>>;
 };
 
 
-export type RootQueryTypeNodeArgs = {
+export type RootQueryTypeGetProductByIdArgs = {
   id: Scalars['ID']['input'];
 };
 
-export type Session = {
-  __typename?: 'Session';
-  account?: Maybe<Account>;
-  token?: Maybe<Scalars['String']['output']>;
+
+export type RootQueryTypeGetProductsByCategoryIdArgs = {
+  categoryId: Scalars['ID']['input'];
 };
 
-export type MeQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetCategoriesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type MeQuery = { __typename?: 'RootQueryType', me?: { __typename?: 'Account', id: string, firstName?: string | null, lastName?: string | null, email?: string | null } | null };
+export type GetCategoriesQuery = { __typename?: 'RootQueryType', getCategories?: Array<{ __typename?: 'Category', id: string, name: string, childrens?: Array<{ __typename?: 'Category', id: string, name: string } | null> | null } | null> | null };
 
-export type CreateSessionMutationVariables = Exact<{
-  input: CreateSessionInput;
+export type AllProductsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type AllProductsQuery = { __typename?: 'RootQueryType', allProducts?: Array<{ __typename?: 'Product', id: string, name: string } | null> | null };
+
+export type GetProductByIdQueryVariables = Exact<{
+  id: Scalars['ID']['input'];
 }>;
 
 
-export type CreateSessionMutation = { __typename?: 'RootMutationType', createSession?: { __typename?: 'Session', token?: string | null } | null };
+export type GetProductByIdQuery = { __typename?: 'RootQueryType', getProductById?: { __typename?: 'Product', id: string, name: string } | null };
 
 
-export const MeDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"me"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"me"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"firstName"}},{"kind":"Field","name":{"kind":"Name","value":"lastName"}},{"kind":"Field","name":{"kind":"Name","value":"email"}}]}}]}}]} as unknown as DocumentNode<MeQuery, MeQueryVariables>;
-export const CreateSessionDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"createSession"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"input"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"CreateSessionInput"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"createSession"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"input"},"value":{"kind":"Variable","name":{"kind":"Name","value":"input"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"token"}}]}}]}}]} as unknown as DocumentNode<CreateSessionMutation, CreateSessionMutationVariables>;
+export const GetCategoriesDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"getCategories"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"getCategories"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"childrens"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}}]}}]}}]}}]} as unknown as DocumentNode<GetCategoriesQuery, GetCategoriesQueryVariables>;
+export const AllProductsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"allProducts"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"allProducts"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}}]}}]}}]} as unknown as DocumentNode<AllProductsQuery, AllProductsQueryVariables>;
+export const GetProductByIdDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"getProductById"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"id"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"ID"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"getProductById"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"Variable","name":{"kind":"Name","value":"id"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}}]}}]}}]} as unknown as DocumentNode<GetProductByIdQuery, GetProductByIdQueryVariables>;

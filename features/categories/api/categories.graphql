@@ -1,0 +1,10 @@
+query getCategories {
+  getCategories {
+    id
+    name
+    childrens {
+      id
+      name
+    }
+  }
+}

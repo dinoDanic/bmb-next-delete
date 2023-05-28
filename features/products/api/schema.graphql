@@ -1,0 +1,13 @@
+query allProducts {
+  allProducts {
+    id
+    name
+  }
+}
+
+query getProductById($id: ID!) {
+  getProductById(id: $id) {
+    id
+    name
+  }
+}

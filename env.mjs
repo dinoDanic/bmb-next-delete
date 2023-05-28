@@ -5,14 +5,17 @@ export const env = createEnv({
   server: {
     // This is optional because it's only used in development.
     // See https://next-auth.js.org/deployment.
-    NEXTAUTH_URL: z.string().url().optional(),
-    NEXTAUTH_SECRET: z.string().min(1),
+    // NEXTAUTH_URL: z.string().url().optional(),
+    // NEXTAUTH_SECRET: z.string().min(1),
+    NEXT_PUBLIC_GRPAHQL_API: z.string().url(),
+    NEXT_PUBLIC_GRPAHQL_SCHEMA: z.string().url(),
   },
   client: {
-    NEXT_PUBLIC_APP_URL: z.string().min(1),
+    NEXT_PUBLIC_GRPAHQL_API: z.string().url(),
+    NEXT_PUBLIC_GRPAHQL_SCHEMA: z.string().url(),
   },
   runtimeEnv: {
-    NEXTAUTH_URL: process.env.NEXTAUTH_URL,
-    NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
+    NEXT_PUBLIC_GRPAHQL_API: process.env.NEXT_PUBLIC_GRPAHQL_API,
+    NEXT_PUBLIC_GRPAHQL_SCHEMA: process.env.NEXT_PUBLIC_GRPAHQL_SCHEMA,
   },
 })

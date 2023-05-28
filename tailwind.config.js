@@ -7,6 +7,7 @@ module.exports = {
   content: [
     "app/**/*.{ts,tsx}",
     "components/**/*.{ts,tsx}",
+    "features/**/*.{ts,tsx}",
     "styles/**/*.{ts,tsx}",
   ],
   theme: {
@@ -30,8 +31,8 @@ module.exports = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "red",
+          foreground: "green",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",

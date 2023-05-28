@@ -1,5 +1,5 @@
 import { GraphQLClient } from "graphql-request"
 
-export const graphQLClient = new GraphQLClient(
-  "https://kodi-straga.kodius.com/api/graphql"
-)
+import { env } from "@/env.mjs"
+
+export const graphqlClient = new GraphQLClient(env.NEXT_PUBLIC_GRPAHQL_SCHEMA)
