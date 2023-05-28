@@ -1,41 +1,44 @@
-"use client";
+"use client"
 
-import React, { FC } from "react";
-import { useSidebarStore } from "@/features/sidebar";
-import { Box, Stack } from "@kodiui/ui";
-import { Text, TextLink } from "@/components";
-import { styleRecipe } from "./displayContent.css";
+import React, { FC } from "react"
+import { Box, Stack } from "@/components"
+import { useSidebarStore } from "@/features/sidebar"
+import { cva } from "class-variance-authority"
+
+import { TextLink } from "@/components/typography/text-link"
 
 export const ExtendContent: FC = () => {
-  const { activeCategory } = useSidebarStore();
+  const { activeCategory } = useSidebarStore()
+
+  const styleVariant = cva(
+    "absolute w-[200px] top-0 right-0 bg-gray-100 z-[-1] h-screen ease-out duration-400 p-md ",
+    {
+      variants: {
+        visibility: {
+          visible: "translate-x-full skew-y-0",
+          hidden: "translate-x-0 skew-y-2 opacity-0",
+          none: "hidden",
+        },
+      },
+    }
+  )
 
   return (
     <Box
-      paddingTop="5xxl"
-      gap="xl"
+      pt="5xl"
       overflow="auto"
-      className={styleRecipe({
+      className={styleVariant({
         visibility: activeCategory ? "visible" : "hidden",
       })}
     >
-      <Box paddingTop="2xl" />
-      <Stack gap="xl">
+      <Box pt="2xl" />
+      <Stack gap="sm">
         {activeCategory?.childrens?.map((c) => (
-          <Text
-            size="small"
-            color={{ hover: "brand", dark: "gray12" }}
-            key={c?.id}
-            weight="medium"
-          >
-            <TextLink href="#">
-              {/* <Center> */}
-              {/*   <Flame /> */}
-              {/* </Center> */}
-              {c?.name}
-            </TextLink>
-          </Text>
+          <TextLink className="hover:text-brand" href="#">
+            {c?.name}
+          </TextLink>
         ))}
       </Stack>
     </Box>
-  );
-};
+  )
+}

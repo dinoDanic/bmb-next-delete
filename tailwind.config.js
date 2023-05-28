@@ -1,5 +1,6 @@
 const { fontFamily } = require("tailwindcss/defaultTheme")
-const { spacing, customColors } = require("./styles/vars")
+const { spacing } = require("./styles/vars")
+const { customColors } = require("./styles/vars/colors")
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -21,6 +22,9 @@ module.exports = {
     extend: {
       // custom 👇
       spacing: spacing,
+      transitionDuration: {
+        400: "400ms",
+      },
 
       colors: {
         ...customColors,

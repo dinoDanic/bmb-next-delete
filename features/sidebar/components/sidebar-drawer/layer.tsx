@@ -11,12 +11,12 @@ export const Layer = () => {
   const onMouseOver = () => clearStore()
 
   const layerVariant = cva(
-    "left-0 top-0 fixed w-screen h-screen bg-black/50 z-10 transition-all opacity-1",
+    "left-0 top-0 fixed w-screen h-screen bg-black/50 backdrop-blur-sm z-10 transition-all opacity-1",
     {
       variants: {
         visiblilty: {
           visible: "opacity-1",
-          hidden: "hidden",
+          hidden: "opacity-0 pointer-events-none",
         },
       },
       defaultVariants: {

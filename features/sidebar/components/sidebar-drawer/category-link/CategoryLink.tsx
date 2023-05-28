@@ -18,9 +18,23 @@ export const CategoryLink: FC<Category> = (category) => {
   const activeColor = isActive ? "brand" : "black"
 
   return (
-    <div className="flex flex-wrap justify-between" onMouseEnter={onHover}>
-      <Link href={"#"}>{category.name}</Link>
-      <ChevronRight />
-    </div>
+    <Link href="#" onFocus={onHover} onMouseEnter={onHover}>
+      <Text color={activeColor}>
+        <span className="flex justify-between">
+          {category.name}
+          <ChevronRight />
+        </span>
+      </Text>
+      {/*TODO: MATIJA JELENA*/}
+      {/* <Text */}
+      {/*   color={activeColor} */}
+      {/*   icon={<ChevronRight />} */}
+      {/*   iconSide="right" */}
+      {/*   justifyContent="between" */}
+      {/* > */}
+      {/*   {category.name} */}
+      {/* </Text> */}
+      {/*TODO: MATIJA JELENA*/}
+    </Link>
   )
 }

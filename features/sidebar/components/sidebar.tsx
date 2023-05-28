@@ -6,8 +6,8 @@ import { SidebarDrawer } from "./sidebar-drawer"
 
 export const Sidebar = () => {
   return (
-    <FlexBox justifyContent="between" background="red-100">
-      <Box p="2xl" position="relative" background="red-900">
+    <FlexBox justifyContent="between">
+      <Box p="2xl" position="relative">
         <ProductTrigger />
         <SidebarDrawer />
       </Box>

@@ -11,10 +11,10 @@ export const ClientTrigger: FC<PropsWithChildren> = ({ children }) => {
 
   const state = isSidebarActive ? "active" : undefined
 
-  const sidebarVariants = cva("translate-x-0 skew-y-2 transition-all", {
+  const sidebarVariants = cva("translate-x-0 transition-all duration-400", {
     variants: {
       state: {
-        active: "translate-x-[105%] skew-y-0",
+        active: "translate-x-[105%]",
       },
     },
   })

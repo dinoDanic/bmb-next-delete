@@ -7,16 +7,15 @@ import { CategoryLink } from "./category-link/CategoryLink"
 
 export const SidebarContent = async () => {
   const { getCategories } = await graphqlClient.request(GetCategoriesDocument)
-  //tu sam stal
-  //
 
   return (
     <Box
       position="absolute"
-      width="full"
       height="screen"
       zIndex="40"
-      background='white'
+      background="white"
+      className="shadow-xl"
+      width="full"
       p="2xl"
     >
       <Box pt="5xl" />

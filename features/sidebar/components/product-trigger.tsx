@@ -1,8 +1,9 @@
 "use client"
 
 import React from "react"
-import { Box } from "@/components"
+import { Box, Cluster } from "@/components"
 import { useSidebarStore } from "@/features/sidebar"
+import { ListIcon } from "lucide-react"
 
 import { Text } from "@/components/typography"
 
@@ -16,9 +17,15 @@ export const ProductTrigger = () => {
       position="relative"
       zIndex="40"
       onMouseEnter={() => setSidebarActive(true)}
-      className="cursor-pointer "
+      className="cursor-pointer"
+      width="96"
     >
-      <Text className={color}>Proizvodi</Text>
+      <Cluster gap="xs" alignItems="center" className={color}>
+        <ListIcon width="13px" />
+        <Text size="sm" weight="medium">
+          Proizvodi
+        </Text>
+      </Cluster>
     </Box>
   )
 }
