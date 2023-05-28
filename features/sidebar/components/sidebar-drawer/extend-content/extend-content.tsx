@@ -6,7 +6,7 @@ import { cva } from "class-variance-authority"
 
 import { Box } from "@/components/primitives/box/box"
 import { Stack } from "@/components/primitives/stack"
-import { TextLink } from "@/components/typography/text-link"
+import { TextLink } from "@/components/typography/TextLink"
 
 export const ExtendContent: FC = () => {
   const { activeCategory } = useSidebarStore()
