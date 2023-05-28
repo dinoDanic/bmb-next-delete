@@ -1,5 +1,5 @@
 const { fontFamily } = require("tailwindcss/defaultTheme")
-const { spacing } = require("./styles/vars")
+const { spacing } = require("./styles/vars/spacing")
 const { customColors } = require("./styles/vars/colors")
 
 /** @type {import('tailwindcss').Config} */

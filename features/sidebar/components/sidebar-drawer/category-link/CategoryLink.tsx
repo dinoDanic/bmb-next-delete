@@ -2,11 +2,11 @@
 
 import React, { FC } from "react"
 import Link from "next/link"
-import { useSidebarStore } from "@/features/sidebar"
+import { useSidebarStore } from "@/features/sidebar/stores/useSidebarStore"
 import { Category } from "@/gql/graphql"
 import { ChevronRight } from "lucide-react"
 
-import { Text } from "@/components/typography"
+import { Text } from "@/components/typography/text"
 
 export const CategoryLink: FC<Category> = (category) => {
   const { activeCategory, setActiveCategory } = useSidebarStore()

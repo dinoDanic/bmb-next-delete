@@ -1,7 +1,6 @@
 "use client"
 
 import React, { useState } from "react"
-import { Stack } from "@/components"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { signIn } from "next-auth/react"
 import { useForm } from "react-hook-form"
@@ -19,6 +18,7 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
+import { Stack } from "@/components/primitives/stack"
 
 import { loginFormSchema } from "../validation"
 

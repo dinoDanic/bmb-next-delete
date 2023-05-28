@@ -1,7 +1,9 @@
 import React from "react"
-import { Box, Stack } from "@/components"
 import { GetCategoriesDocument } from "@/gql/graphql"
-import { graphqlClient } from "@/lib"
+
+import { graphqlClient } from "@/lib/graphql-request"
+import { Box } from "@/components/primitives/box/box"
+import { Stack } from "@/components/primitives/stack"
 
 import { CategoryLink } from "./category-link/CategoryLink"
 

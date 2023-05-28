@@ -1,10 +1,11 @@
 "use client"
 
 import React, { FC } from "react"
-import { Box, Stack } from "@/components"
-import { useSidebarStore } from "@/features/sidebar"
+import { useSidebarStore } from "@/features/sidebar/stores/useSidebarStore"
 import { cva } from "class-variance-authority"
 
+import { Box } from "@/components/primitives/box/box"
+import { Stack } from "@/components/primitives/stack"
 import { TextLink } from "@/components/typography/text-link"
 
 export const ExtendContent: FC = () => {

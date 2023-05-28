@@ -1,8 +1,10 @@
 import React from "react"
-import { Box, FlexBox } from "@/components"
+
+import { Box } from "@/components/primitives/box/box"
+import { FlexBox } from "@/components/primitives/flex-box"
 
 import { ProductTrigger } from "./product-trigger"
-import { SidebarDrawer } from "./sidebar-drawer"
+import { SidebarDrawer } from "./sidebar-drawer/sidebar-drawer"
 
 export const Sidebar = () => {
   return (

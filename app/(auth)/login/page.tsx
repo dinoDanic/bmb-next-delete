@@ -1,8 +1,9 @@
 import React from "react"
-import { Stack } from "@/components"
 import { LoginForm } from "@/features/auth/components/LoginForm"
 
-import { Heading, Text } from "@/components/typography"
+import { Stack } from "@/components/primitives/stack"
+import { Heading } from "@/components/typography/heading"
+import { Text } from "@/components/typography/text"
 
 const LoginPage = () => {
   return (

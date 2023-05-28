@@ -1,11 +1,13 @@
 "use client"
 
 import React from "react"
-import { Box, Cluster } from "@/components"
-import { useSidebarStore } from "@/features/sidebar"
 import { ListIcon } from "lucide-react"
 
-import { Text } from "@/components/typography"
+import { Box } from "@/components/primitives/box/box"
+import { Cluster } from "@/components/primitives/cluster"
+import { Text } from "@/components/typography/text"
+
+import { useSidebarStore } from "../stores/useSidebarStore"
 
 export const ProductTrigger = () => {
   const { isSidebarActive, setSidebarActive } = useSidebarStore()
