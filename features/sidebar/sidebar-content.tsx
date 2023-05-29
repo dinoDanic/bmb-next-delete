@@ -1,6 +1,6 @@
 import React from "react"
 
-import { Box } from "@/components/primitives/box"
+import { Box } from "@/components/primitives/box/box"
 // import { GetCategoriesDocument } from "@/gql/graphql"
 
 // import { graphqlClient } from "@/lib/graphql-request"

@@ -3,7 +3,7 @@
 import React, { FC, PropsWithChildren } from "react"
 import { cva } from "class-variance-authority"
 
-import { Box } from "@/components/primitives/box"
+import { Box } from "@/components/primitives/box/box"
 
 import { useSidebarStore } from "./stores/use-sidebar-store"
 

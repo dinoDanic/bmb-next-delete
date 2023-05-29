@@ -1,6 +1,6 @@
 import React from "react"
 
-import { Box } from "@/components/primitives/box"
+import { Box } from "@/components/primitives/box/box"
 import { FlexBox } from "@/components/primitives/flex-box"
 
 import { ProductTrigger } from "./product-trigger"

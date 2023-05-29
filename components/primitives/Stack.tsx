@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 
-import { Box, BoxProps } from "./box"
+import { Box, BoxProps } from "./box/box"
 
 export const Stack: FC<BoxProps> = ({
   children,

@@ -3,7 +3,7 @@
 import React from "react"
 import { ListIcon } from "lucide-react"
 
-import { Box } from "@/components/primitives/box"
+import { Box } from "@/components/primitives/box/box"
 import { Cluster } from "@/components/primitives/cluster"
 
 import { useSidebarStore } from "./stores/use-sidebar-store"

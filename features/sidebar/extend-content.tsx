@@ -5,8 +5,9 @@ import Link from "next/link"
 import { useSidebarStore } from "@/features/sidebar/stores/use-sidebar-store"
 import { cva } from "class-variance-authority"
 
-import { Box } from "@/components/primitives/box"
+import { Box } from "@/components/primitives/box/box"
 import { Stack } from "@/components/primitives/stack"
+import { Text } from "@/components/typography/text"
 
 export const ExtendContent: FC = () => {
   const { activeCategory } = useSidebarStore()
@@ -34,11 +35,14 @@ export const ExtendContent: FC = () => {
     >
       <Box pt="2xl" />
       <Stack gap="sm">
-        {activeCategory?.childrens?.map((c) => (
-          <Link className="hover:text-brand" href="#">
-            {c?.name}
-          </Link>
-        ))}
+        {activeCategory?.childrens?.map((c) => {
+          return (
+            <Link className="hover:text-brand" href="#">
+              {c?.name}
+              <Text className="hover:text-brand">{c?.name}</Text>
+            </Link>
+          )
+        })}
       </Stack>
     </Box>
   )

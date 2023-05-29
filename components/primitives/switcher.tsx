@@ -1,7 +1,7 @@
 import React, { FC } from "react"
 import clsx from "clsx"
 
-import { Box, BoxProps } from "./box"
+import { Box, BoxProps } from "./box/box"
 
 export const Switcher: FC<BoxProps> = ({
   children,
